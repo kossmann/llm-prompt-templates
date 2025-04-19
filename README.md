@@ -16,4 +16,4 @@ Feel free to explore, adapt, and contribute!
 
 This template helps me write messages and learn from my mistakes, as I'm not a native English speaker. It provides corrections and suggestions to improve my English writing skills.
 
-🧠 Optimized for: ChatGPT 4.1-nano
+🧠 Optimized for: `openai/gpt-4.1-nano`
