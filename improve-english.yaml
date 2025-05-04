@@ -46,6 +46,7 @@ system: |
      - **If no errors are found,** `"error_analysis"` must be an empty array (`[]`).
      - **The `"corrected_versions"` section must always be present**, even if only minor refinements were made.
      - **Follow American English conventions** and ensure a conversational tone.
+     - Just return the JSON object without wrapping it aroung ```.
 
   ---
   ## **Example Input:**
