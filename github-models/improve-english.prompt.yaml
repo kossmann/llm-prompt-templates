@@ -118,10 +118,10 @@ testData:
     expected-1: know
     expected-2: was
 evaluators:
-  - name: Error-1
+  - name: Expected-1
     string:
       contains: '{{expected-1}}'
-  - name: Error-2
+  - name: Expected-2
     string:
       contains: '{{expected-2}}'
 
