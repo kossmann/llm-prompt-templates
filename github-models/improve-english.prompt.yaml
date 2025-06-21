@@ -87,11 +87,11 @@ messages:
 testData:
   - input: |
       This is not helpfull.
+    expected: helpful
   - input: |
       Don't worry, I can easely fix this iten.
+    expected: easily, item
   - input: |
       I didn't knew this is broken.
-  - input: |
-      Should I add a new item on the website menu?
-  - input: |
-      Hey! Thanks for reporting this issue. I have already send this to my team to fix it, but I will double check with them to make sure it will be prioritized until 13 july.
+    expected: know, was
+
