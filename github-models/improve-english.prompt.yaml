@@ -88,7 +88,7 @@ testData:
   - input: |
       This is not helpfull.
     expected1: helpful
-    expected2: 
+    expected2: helpful
   - input: |
       Don't worry, I can easely fix this iten.
     expected1: easily
