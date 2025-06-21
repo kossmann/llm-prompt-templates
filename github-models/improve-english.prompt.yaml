@@ -87,13 +87,13 @@ messages:
 testData:
   - input: |
       This is not helpfull.
-    expected: helpful
+    expected1: helpful
   - input: |
       Don't worry, I can easely fix this iten.
-    expected: easily
-    expected: item
+    expected1: easily
+    expected2: item
   - input: |
       I didn't knew this is broken.
-    expected: know
-    expected: was
+    expected1: know
+    expected2: was
 
