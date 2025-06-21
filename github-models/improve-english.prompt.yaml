@@ -124,7 +124,7 @@ testData:
   - input: |
       Hey! Thanks for reporting this issue. I have already send this to my team to fix it, but I will double check with them to make sure it will be prioritized until 13 july.
     expected-1: sent
-    expected-2: by July 13
+    expected-2: '"correction": "prioritized by July 13"'
 evaluators:
   - name: Expected-1
     string:
