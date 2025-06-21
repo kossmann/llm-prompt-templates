@@ -90,8 +90,10 @@ testData:
     expected: helpful
   - input: |
       Don't worry, I can easely fix this iten.
-    expected: easily, item
+    expected: easily
+    expected: item
   - input: |
       I didn't knew this is broken.
-    expected: know, was
+    expected: know
+    expected: was
 
