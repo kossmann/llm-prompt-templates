@@ -78,5 +78,5 @@ messages:
       }
   - role: user
     content: |
-      {{input}}    
+      {{input}}
 
