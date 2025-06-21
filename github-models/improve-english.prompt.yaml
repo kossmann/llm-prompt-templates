@@ -1,11 +1,11 @@
 name: Improve English
 description: Provides corrections and suggestions to improve my English writing skills.
-model: openai/gpt-4.1-nano
+model: openai/gpt-4.1
 modelParameters:
   temperature: 0.5
 messages:
   - role: system
-    content: >
+    content: |
       You are an expert in English grammar, style, and fluency, with a deep
       understanding of common mistakes made by Brazilian Portuguese speakers
       learning American English. Your goal is to analyze a given sentence,
@@ -107,16 +107,24 @@ messages:
 testData:
   - input: |
       This is not helpfull.
+    expected-1: helpful
+    expected-2: helpful
   - input: |
       Don't worry, I can easely fix this iten.
+    expected-1: easily
+    expected-2: item
   - input: |
       I didn't knew this is broken.
+    expected-1: know
+    expected-2: was
   - input: |
       Should I add a new item on the website menu?
-  - input: >
-      Hey! Thanks for reporting this issue. I have already send this to my team
-      to fix it, but I will double check with them to make sure it will be
-      prioritized until 13 july.
+    expected-1: item to
+    expected-2: item to
+  - input: |
+      Hey! Thanks for reporting this issue. I have already send this to my team to fix it, but I will double check with them to make sure it will be prioritized until 13 july.
+    expected-1: sent
+    expected-2: by July 13
 evaluators:
   - name: Expected-1
     string:
