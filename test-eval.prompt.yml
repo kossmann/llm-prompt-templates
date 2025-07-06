@@ -1,0 +1,33 @@
+messages:
+  - role: system
+    content: ''
+  - role: user
+    content: Write me one sentence.
+model: openai/gpt-4o
+testData:
+  - expected: one sentence
+evaluators:
+  - name: eval-contains
+    string:
+      contains: test1
+  - name: eval-contains-casesensitive
+    string:
+      strict: true
+      contains: test2
+  - name: eval-startwith
+    string:
+      startsWith: test3
+  - name: eval-endswith
+    string:
+      endsWith: test4
+  - name: eval-customprompt
+    llm:
+      model: gpt-4.1-nano
+      modelId: >-
+        azureml://registries/azure-openai/models/gpt-4.1-nano/versions/2025-04-14
+      prompt: check if the return is just one sentence
+      choices:
+        - choice: 'yes'
+          score: 1
+        - choice: 'no'
+          score: 0
