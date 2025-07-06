@@ -1,11 +1,13 @@
 messages:
   - role: system
-    content: ''
+    content: this is the system prompt.
   - role: user
-    content: Write me one sentence.
-model: openai/gpt-4o
+    content: this is the user prompt {{variable1}} and {{variable2}}.
+model: openai/gpt-4.1-nano
 testData:
-  - expected: one sentence
+  - expected: This is what it's expected
+    variable1: value for variable1
+    variable2: value for variable2
 evaluators:
   - name: eval-contains
     string:
@@ -20,14 +22,47 @@ evaluators:
   - name: eval-endswith
     string:
       endsWith: test4
-  - name: eval-customprompt
+  - name: eval-customprompt-passfail
     llm:
       model: gpt-4.1-nano
       modelId: >-
         azureml://registries/azure-openai/models/gpt-4.1-nano/versions/2025-04-14
-      prompt: check if the return is just one sentence
+      prompt: this is the prompt
       choices:
-        - choice: 'yes'
+        - choice: resultPass
           score: 1
-        - choice: 'no'
+        - choice: resultFail
           score: 0
+      systemPrompt: this is the system prompt
+  - name: eval-customprompt-scores
+    llm:
+      model: gpt-4.1-nano
+      modelId: >-
+        azureml://registries/azure-openai/models/gpt-4.1-nano/versions/2025-04-14
+      prompt: this is the prompt
+      choices:
+        - choice: resultscore0
+          score: 0
+        - choice: resultscore50
+          score: 50
+        - choice: resultscore100
+          score: 100
+        - choice: resultscore200
+          score: 200
+      systemPrompt: this is the system prompt
+  - name: Similarity
+    uses: github/similarity
+  - name: Coherence
+    uses: github/coherence
+  - name: Fluency
+    uses: github/fluency
+  - name: Relevance
+    uses: github/relevance
+  - name: Groundedness
+    uses: github/groundedness
+responseFormat: text
+modelParameters:
+  temperature: 0.95
+  top_p: 0.95
+  stop:
+    - Force cutting the output when this string occurs.
