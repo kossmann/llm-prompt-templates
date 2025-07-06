@@ -22,9 +22,6 @@ messages:
       ---
 
       ## **Output Format (Strict JSON)**
-
-      json
-
       {
         "original_sentence": "[User's input]",
         "error_analysis": [
@@ -46,7 +43,6 @@ messages:
           "smooth_polished": "[Smooth & Polished version]"
         }
       }
-
 
 
       ---
@@ -78,9 +74,6 @@ messages:
 
 
       ## **Example Output (Strict JSON Format):**
-
-      json
-
       {
         "original_sentence": "I will send to you the report in the next week.",
         "error_analysis": [
